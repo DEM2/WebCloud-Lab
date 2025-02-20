@@ -1,0 +1,29 @@
+.new-section {
+    padding-top:48px;
+    background-color: #ffffff; 
+    width: 100%;
+    font-family: Helvetica;
+  }
+  
+  .container {
+    text-align: left;
+    width:800px; 
+    padding-left: 130px;
+    direction: initial;
+  }
+  
+  .section-title {
+    font-size: 50px;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .section-description {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  

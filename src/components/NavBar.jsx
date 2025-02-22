@@ -1,29 +1,30 @@
 import React, { useState, useEffect } from "react";
-import "../CSS/NavBar.css"; // Importamos los estilos
+import "../CSS/NavBar.css";
 
 function Navbar() {
   const [scrolling, setScrolling] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
+      setScrolling(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav className={`navbar ${scrolling ? "scrolled" : ""}`}>
-       <div className="logo">
+      <div className="logo">
         <img src="src/assets/logo_webcloud.png" alt="Logo" />
-        <span className={`logo-text ${scrolling ? "hidden" : ""}`}>WebCloud Lab</span>
+        <span className={`logo-text ${scrolling ? "hidden" : ""}`}>WebCloud Labs</span>
       </div>
-      <ul className="nav-links">
+
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </button>
+
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#services">Service</a></li>

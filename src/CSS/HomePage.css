@@ -6,7 +6,45 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #242424;
+  background: linear-gradient(135deg, #0d0814, #573983);
+}
+
+.bubble {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  opacity: 0;
+  animation: floatUp linear infinite;
+}
+
+.bubble:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 6s; animation-delay: 0s; }
+.bubble:nth-child(2) { width: 60px; height: 60px; left: 25%; animation-duration: 8s; animation-delay: 1s; }
+.bubble:nth-child(3) { width: 80px; height: 80px; left: 40%; animation-duration: 7s; animation-delay: 2s; }
+.bubble:nth-child(4) { width: 50px; height: 50px; left: 55%; animation-duration: 9s; animation-delay: 1.5s; }
+.bubble:nth-child(5) { width: 70px; height: 70px; left: 70%; animation-duration: 10s; animation-delay: 3s; }
+.bubble:nth-child(6) { width: 90px; height: 90px; left: 85%; animation-duration: 7.5s; animation-delay: 2.5s; }
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.6;
+    transform: translateY(75vh) translateX(-30px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(50vh) translateX(20px);
+  }
+  75% {
+    opacity: 0.6;
+    transform: translateY(25vh) translateX(-15px);
+  }
+  100% {
+    transform: translateY(0) translateX(10px);
+    opacity: 0;
+  }
 }
 
 .typing {
@@ -26,28 +64,40 @@
 }
 
 .principal-title {
-  font-family: Helvetica;
-  font-size: 50px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 55px;
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
+  color: white;
 }
 
-  .color1 {
-    color: #66408c }
-  
-  .color2 {
-    color: #a379d3 ;  
-  }
-  
-  .color3 {
-    color: #d6c4ee; 
-  }
+.color1 { color: #c69aff; }
+.color2 { color: #a379d3; }
+.color3 { color: #c9b7e0; }
 
-  .principal-text {
-    font-family: Helvetica;
-    font-size: 1.2rem;
-    color:darkgrey;
-    text-align: center;
-    margin-top: 10px;
-  }
+.principal-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+  color: #e0d6eb;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.contact {
+  background: #7a51a2;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 400;
+  border:#573983;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.contact:hover {
+  background: #59367a;
+  transform: scale(1.05);
+}
+

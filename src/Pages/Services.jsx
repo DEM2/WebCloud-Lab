@@ -1,19 +1,47 @@
 import React from "react";
-import "../CSS/Service.css"; 
+import Services from "../components/Services.jsx";
+import "../CSS/Service.css";
 
-function Services() {
+function servicesInfo() {
+  const Info = [
+    {
+      image: "src/assets/softwareDevelopment.PNG",
+      serviceTitle: "Software Development",
+      description: "Lorem Ipsum",
+    },
+    {
+      image: "src/assets/dataScience.PNG",
+      serviceTitle: "Data Science",
+      description: "Lorem Ipsum",
+    },
+  ];
+
   return (
     <section className="new-section">
       <div className="container">
-        <h2 className="section-title">Our Services</h2>
-        <p className="section-description">
-        We develop customized software solutions to enhance efficiency and drive business growth.
-         Our team creates everything from intuitive interfaces to robust backend systems, 
-         ensuring innovative and high-performance digital products.
-        </p>
+        <header className="header-info">
+          <h2 className="section-title">Our Services</h2>
+          <p className="section-description">
+            We develop customized software solutions to enhance efficiency and drive business growth.
+            Our team creates everything from intuitive interfaces to robust backend systems,
+            ensuring innovative and high-performance digital products.
+          </p>
+        </header>
+
+        <div className="services-info">
+          {Info.map((info, index) => (
+            <Services
+              key={index}
+              image={info.image}
+              serviceTitle={info.serviceTitle}
+              description={info.description}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-export default Services;
+
+export default servicesInfo;

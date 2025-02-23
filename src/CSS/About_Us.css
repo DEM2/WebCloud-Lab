@@ -18,22 +18,19 @@
   font-weight: 600;
   color: white;
   margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
   animation: fadeInDown 2s ease-in-out;
 }
 
 .team-header .team-description{
-  font-size: 18px;
   font-weight: normal;
   animation: fadeInDown 2s ease-in-out;
 }
 
 .team-description {
   font-size: 1.2rem;
-  color: #d3d3d3;
-  max-width: 600px;
-  margin: 0 auto 0px;
+  color: #e5e5e5;
+  max-width: 800px;
+  margin: 0 auto;
   line-height: 1.8;
   animation: fadeInUp 1s ease-in-out;
 }
@@ -41,7 +38,7 @@
 .team-container {
   text-align: center;
   z-index: 1; 
-  padding-top: 50px;
+  padding-top: 30px;
   border-radius: 15px;
   padding-bottom: 50px;
 }
@@ -69,8 +66,8 @@
 }
 
 .profile-card:hover {
-  transform: translateY(0); /* Baja suavemente a su posición */
-  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2); /* Sombra más difusa */
+  transform: translateY(0); 
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2); 
   opacity: 1;
 }
 

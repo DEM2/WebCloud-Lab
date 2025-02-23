@@ -1,29 +1,106 @@
 .new-section {
-    padding-top:48px;
-    background-color: #ffffff; 
-    width: 100%;
-    font-family: Helvetica;
+    font-family: "Gabarito", serif;
+    text-align: center;
+    background: #ffffff;
+    position: relative;
+    padding: 50px 20px;
+  }
+
+  .container{
+    text-align: center;
+    z-index: 1; 
+    padding-top: 30px;
+    border-radius: 15px;
+    padding-bottom: 50px;
   }
   
-  .container {
-    text-align: left;
-    width:800px; 
-    padding-left: 130px;
-    direction: initial;
+  .header-info {
+    position: relative;
+    z-index: auto;
+    padding-bottom: 70px;
   }
   
   .section-title {
-    font-size: 50px;
-    font-weight: 300;
-    color: #333;
+    font-size: 60px;
+    font-weight: 600;
+    color: #4a2c5b;
     margin-bottom: 15px;
+    animation: fadeInDown 2s ease-in-out;
   }
   
   .section-description {
     font-size: 1.2rem;
-    color: #666;
+    color: #000000;
     max-width: 800px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease-in-out;
+  }
+
+  .services-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    margin: auto;
+    padding: 40px 20px;
   }
   
+  .info-service {
+    background: rgba(255, 255, 255, 0.6); /* Fondo blanco difuminado */
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    max-width: 1350px; 
+    margin: auto;
+    border: 2px solid #4a2c5b; /* Borde negro */
+    box-shadow: 0px 4px 20px #4a2c5b; /* Sombra para el efecto sobresaliente */
+    backdrop-filter: blur(10px); /* Difuminado */
+}
+
+
+  .service-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .service-desc h2 {
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .service-desc p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  
+  .info-service img {
+    width: 430px; 
+    height: 330px; 
+    border-radius: 0;
+    border: none;
+    object-fit: cover;
+    display: block;
+    box-shadow: none;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .services-info {
+      grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+    }
+  
+    .info-service {
+      flex-direction: column;
+      text-align: center;
+    }
+  }

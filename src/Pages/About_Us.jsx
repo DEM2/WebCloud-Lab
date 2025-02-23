@@ -29,7 +29,7 @@ function AboutUs() {
       <div className="team-background"></div>
       <div className="team-container">
         <header className="team-header">
-          <h1 className="Section_team_title">Our Team</h1>
+          <h1 className="Section_team_title">Our Leadership Team</h1>
           <p className="team-description">
             We are a team passionate about innovation and technology, committed to developing
             efficient and creative solutions. We work together to deliver high-quality products,

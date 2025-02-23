@@ -6,12 +6,12 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, #080914, #3a3983);
+  background: aliceblue;
 }
 
 .bubble {
   position: absolute;
-  background: rgba(255, 255, 255, 0.204);
+  background: rgba(255, 255, 255, 0);
   border-radius: 50%;
   opacity: 0;
   animation: floatUp linear infinite;
@@ -69,17 +69,13 @@
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
-  color: white;
+  color: #333272;
 }
-
-.color { 
-    color: aliceblue;
-  }
 
 .principal-text {
   font-family: "Gabarito", serif;
   font-size: 1.4rem;
-  color: #d6d7eb;
+  color: #000000;
   text-align: center;
   margin-top: -20px;
 }
@@ -87,7 +83,7 @@
 .principal-texts{
   font-family: "Gabarito", serif;
   font-size: 1.4rem;
-  color: #e0d6eb;
+  color: #000000;
   text-align: center;
   margin-top: -15px;
   margin-bottom: 30px;

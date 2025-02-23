@@ -8,19 +8,19 @@ function AboutUs() {
       image: "src/assets/juanCampanella.jpg",
       name: "Juan Jose Campanella",
       profession: "BSc. Systems Engineering",
-      description: "Apasionado por la tecnología y la experiencia de usuario.",
+      description: "Passionate about technology and user experience.",
     },
     {
       image: "src/assets/danielMendoza.jpeg",
       name: "Daniel Mendoza",
       profession: "BSc. Systems Engineering",
-      description: "Desarrollador web con capacidad de adaptación, trabajo en equipo y enfoque en soluciones eficientes e innovadoras.",
+      description: "Web developer with adaptability, teamwork and focus on efficient and innovative solutions.",
     },
     {
       image: "src/assets/vanessaFontalvo.jpg",
       name: "Vanessa Fontalvo",
       profession: "BSc. Systems Engineering",
-      description: "Lidera proyectos de manera eficiente con visión estratégica.",
+      description: "Leads projects efficiently with strategic vision.",
     },
   ];
 

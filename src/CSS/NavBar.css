@@ -87,8 +87,11 @@
   outline: none;
 }
 
+.navbar.scrolled .menu-toggle{
+  color:aliceblue;
+}
+
 .menu-toggle:hover {
-  color: #1c1c40;
   transform: translateY(-2px);
   transition: color 0.3s ease, transform 0.3s ease;
 }

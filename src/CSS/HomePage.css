@@ -74,7 +74,15 @@
   color: #333272;
 }
 
-.principal-text {
+@media (max-width: 768px) {
+  .principal-title {
+    font-size: 45px; 
+    line-height: 1.2;
+    margin-bottom: 45px;
+  }
+}
+
+.principal-text{
   font-family: "Gabarito", serif;
   font-size: 1.4rem;
   color: #000000;
@@ -101,6 +109,14 @@
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    width: 25%; 
+    font-size: 1rem; 
+    padding: 12px 20px;
+  }
 }
 
 .contact:hover {

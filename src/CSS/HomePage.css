@@ -73,9 +73,7 @@
 }
 
 .color { 
-    background: linear-gradient(135deg, #2a2a57, #6969a0, #cbcef7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: aliceblue;
   }
 
 .principal-text {

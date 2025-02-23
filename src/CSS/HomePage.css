@@ -11,10 +11,11 @@
 
 .bubble {
   position: absolute;
-  background: rgba(255, 255, 255, 0);
-  border-radius: 50%;
+  background: rgba(32, 35, 88, 0.721); /* Color blanco semitransparente */
+  border-radius: 60%;
   opacity: 0;
   animation: floatUp linear infinite;
+  box-shadow: 0 0 10px rgba(39, 46, 93, 0.54); /* Agrega un brillo */
 }
 
 .bubble:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 6s; animation-delay: 0s; }
@@ -27,7 +28,7 @@
 @keyframes floatUp {
   0% {
     transform: translateY(100vh) translateX(0);
-    opacity: 0;
+    opacity: 0.3; /* Ahora son visibles desde el inicio */
   }
   25% {
     opacity: 0.6;
@@ -43,9 +44,10 @@
   }
   100% {
     transform: translateY(0) translateX(10px);
-    opacity: 0;
+    opacity: 0.2; /* No desaparecen completamente */
   }
 }
+
 
 .typing {
   overflow: hidden;

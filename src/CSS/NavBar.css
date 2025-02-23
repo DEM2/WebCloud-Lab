@@ -15,7 +15,7 @@
 }
 
 .navbar.scrolled {
-  background: rgba(51, 27, 64, 0.7);
+  background: rgba(27, 28, 64, 0.7);
   backdrop-filter: blur(10px);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   padding: 10px 40px;
@@ -59,7 +59,7 @@
 }
 
 .nav-links li a:hover {
-  color: #734eab;
+  color: #333284;
   transform: translateY(-2px);
 }
 
@@ -74,7 +74,7 @@
 }
 
 .menu-toggle:hover {
-  color: #734eab;
+  color: #1c1c40;
   transform: translateY(-2px);
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -93,7 +93,7 @@
     position: fixed;
     top: 88px;
     right: 70px;
-    background: rgba(30, 30, 30, 0.9);
+    background: rgba(23, 22, 45, 0.9);
     flex-direction: column;
     gap: 15px;
     padding: 20px;

@@ -23,7 +23,7 @@
 .contact-title{
     font-size: 60px;
     font-weight: 600;
-    color: #4a2c5b;
+    color: #333272;
     margin-bottom: 15px;
     animation: fadeInDown 2s ease-in-out;
 }
@@ -40,10 +40,10 @@
 form {
     max-width: 600px;
     height: 450px;
-    background: #4a2c5b;
+    background: #212059;
     padding: 60px;
     border-radius: 12px;
-    box-shadow: 0 8px 15px #4a2c5b;
+    box-shadow: 0 8px 15px #333272;
     text-align: center;
     margin: auto;
     display: flex;
@@ -75,13 +75,13 @@ form {
   }
   
   input:focus, textarea:focus {
-    border-color: #4a2c5b;
+    border-color: #333272;
     outline: none;
-    box-shadow: 0 0 8px rgba(74, 44, 91, 0.4);
+    box-shadow: 0 0 8px rgba(44, 44, 91, 0.4);
   }
   
   input[type="submit"] {
-    background: #754d90;
+    background: #4d5290;
     margin-top: 20px;
     color: white;
     font-size: 1rem; 
@@ -96,7 +96,7 @@ form {
 }
   
   input[type="submit"]:hover {
-    background: #622a74;
+    background: #453f89;
     box-shadow: 0 5px 15px rgba(74, 44, 91, 0.3);
   }
 
@@ -125,12 +125,12 @@ form {
 
 .modal-content p {
     font-size: 1.2rem;
-    color: #4a2c5b;
+    color: #000000;
     margin-bottom: 15px;
 }
 
 .modal-content button {
-    background: #4a2c5b;
+    background: #2c2d5b;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -141,7 +141,7 @@ form {
 }
 
 .modal-content button:hover {
-    background: #622a74;
+    background: #2b2a74;
 }
 
 .error-message {

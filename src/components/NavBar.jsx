@@ -4,17 +4,29 @@ import "../CSS/NavBar.css";
 function Navbar() {
   const [scrolling, setScrolling] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolling(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > prevScrollY) {
+        setVisible(false); // Ocultar cuando el usuario sube
+      } else {
+        setVisible(true); // Mostrar cuando baja
+      }
+
+      setScrolling(currentScrollY > 50);
+      setPrevScrollY(currentScrollY);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [prevScrollY]);
 
   return (
-    <nav className={`navbar ${scrolling ? "scrolled" : ""}`}>
+    <nav className={`navbar ${scrolling ? "scrolled" : ""} ${visible ? "" : "hidden"}`}>
       <div className="logo">
         <img src="src/assets/logo_webcloud.png" alt="Logo" />
         <span className={`logo-text ${scrolling ? "hidden" : ""}`}>WebCloud Labs</span>

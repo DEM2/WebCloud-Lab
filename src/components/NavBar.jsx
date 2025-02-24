@@ -25,6 +25,15 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollY]);
 
+  const scrollToSection = (event, sectionId) => {
+    event.preventDefault(); // Evitar que la página recargue
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false); // Cerrar el menú en móviles después de hacer clic
+    }
+  };
+
   return (
     <nav className={`navbar ${scrolling ? "scrolled" : ""} ${visible ? "" : "hidden"}`}>
       <div className="logo">
@@ -37,10 +46,10 @@ function Navbar() {
       </button>
 
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Service</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" onClick={(e) => scrollToSection(e, "home")}>Home</a></li>
+        <li><a href="#about" onClick={(e) => scrollToSection(e, "aboutUs")}>About Us</a></li>
+        <li><a href="#services" onClick={(e) => scrollToSection(e, "services")}>Services</a></li>
+        <li><a href="#contact" onClick={(e) => scrollToSection(e, "contact")}>Contact</a></li>
       </ul>
     </nav>
   );

@@ -17,7 +17,7 @@ function servicesInfo() {
   ];
 
   return (
-    <section className="new-section">
+    <section id="services" className="new-section">
       <div className="container">
         <header className="header-info">
           <h2 className="section-title">Our Services</h2>

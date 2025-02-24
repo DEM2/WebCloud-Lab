@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from './Pages/HomePage'
 import Navbar from './components/NavBar'
 import AboutUs from './Pages/About_Us'
@@ -15,6 +16,7 @@ function App() {
       <Contact />
       <Footer />
     </>
+
   )
 }
 

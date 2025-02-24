@@ -25,7 +25,7 @@ function AboutUs() {
   ];
 
   return (
-    <section className="about-us">
+    <section id="aboutUs" className="about-us">
       <div className="team-background"></div>
       <div className="team-container">
         <header className="team-header">

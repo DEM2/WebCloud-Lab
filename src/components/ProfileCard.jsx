@@ -16,7 +16,7 @@ function ProfileCard({ image, name, profession, description }) {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Para cargar las visibles de inmediato
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

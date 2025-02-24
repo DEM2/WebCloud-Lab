@@ -129,6 +129,14 @@
     pointer-events: auto;
   }
 
+  .nav-links.open li a {
+    color: white; 
+  }
+  
+  .nav-links.open li a:hover {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
   .menu-toggle {
     display: block;
   }

@@ -11,7 +11,7 @@ function Footer() {
         <ul className="social-links">
           <li><a href="#"><FaFacebookF /></a></li>
           <li><a href="#"><FaInstagram /></a></li>
-          <li><a href="#"><FaLinkedinIn /></a></li>
+          <li><a href="https://www.linkedin.com/company/webcloudlabs"><FaLinkedinIn /></a></li>
         </ul>
       </div>
     </footer>

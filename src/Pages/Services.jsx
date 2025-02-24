@@ -7,12 +7,12 @@ function servicesInfo() {
     {
       image: "src/assets/softwareDevelopment.PNG",
       serviceTitle: "Software Development",
-      description: "Lorem Ipsum",
+      description: "We develop software applications that will boost your business.",
     },
     {
       image: "src/assets/dataScience.PNG",
       serviceTitle: "Data Science",
-      description: "Lorem Ipsum",
+      description: "We analyze the information provided and make reports based on the data for a better approach to your business.",
     },
   ];
 

@@ -25,7 +25,7 @@ function Service({image, serviceTitle, description}) {
                 <h2 className="service-name">{serviceTitle}</h2>
                 <p className="service-description">{description}</p>
             </div>
-            <img src={image} alt={serviceTitle} className="info-service"/>
+            <img src= {`${import.meta.env.BASE_URL}${image}`} alt={serviceTitle} className="info-service"/>
         </div>
       );
 }

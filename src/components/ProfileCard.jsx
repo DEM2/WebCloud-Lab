@@ -22,7 +22,7 @@ function ProfileCard({ image, name, profession, description }) {
 
   return (
     <div ref={cardRef} className={`profile-card ${isVisible ? "visible" : ""}`}>
-      <img src={image} alt={name} className="profile-image" />
+      <img src= {`${import.meta.env.BASE_URL}${image}`} alt={name} className="profile-image" />
       <div className="profile-info">
         <h2 className="profile-name">{name}</h2>
         <h3 className="profile-profession">{profession}</h3>

@@ -1,33 +1,55 @@
 import React, { useState, useEffect } from "react";
-import "../CSS/NavBar.css"; // Importamos los estilos
+import "../CSS/NavBar.css"; 
 
 function Navbar() {
   const [scrolling, setScrolling] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolling(true);
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > prevScrollY) {
+        setVisible(false); 
       } else {
-        setScrolling(false);
+        setVisible(true); 
       }
+
+      setScrolling(currentScrollY > 50);
+      setPrevScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [prevScrollY]);
+
+  const scrollToSection = (event, sectionId) => {
+    event.preventDefault(); 
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false); 
+    }
+  };
 
   return (
-    <nav className={`navbar ${scrolling ? "scrolled" : ""}`}>
-       <div className="logo">
-        <img src="src/assets/logo_webcloud.png" alt="Logo" />
-        <span className={`logo-text ${scrolling ? "hidden" : ""}`}>WebCloud Lab</span>
+    <nav className={`navbar ${scrolling ? "scrolled" : ""} ${visible ? "" : "hidden"}`}>
+      <div className="logo">
+        <img src= "src/assets/Images/logo_webcloud.png" alt="Logo" />
+        <span className={`logo-text ${scrolling ? "hidden" : ""}`}>WebCloud Labs</span>
       </div>
-      <ul className="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Service</a></li>
-        <li><a href="#contact">Contact</a></li>
+
+      <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </button>
+
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+        <li><a href="#home" onClick={(e) => scrollToSection(e, "home")}>Home</a></li>
+        <li><a href="#about" onClick={(e) => scrollToSection(e, "about")}>About Us</a></li>
+        <li><a href="#services" onClick={(e) => scrollToSection(e, "services")}>Services</a></li>
+        <li><a href="#contact" onClick={(e) => scrollToSection(e, "contact")}>Contact</a></li>
       </ul>
     </nav>
   );

@@ -1,68 +1,46 @@
-import React, { useRef, useState } from "react";
-import emailjs from "emailjs-com";
-import "../CSS/ContactUs.css"; // Archivo de estilos mejorado
+import  { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import "../CSS/ContactUs.css";
 
 const ContactUs = () => {
     const form = useRef();
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: "",
-    });
-    const [errors, setErrors] = useState({});
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [setIsModalOpen] = useState(false);
 
-    const validateForm = () => {
-        let newErrors = {};
-        if (!formData.name.trim()) newErrors.name = "Name is required";
-        if (!formData.email.trim()) newErrors.email = "Email is required";
-        else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Invalid email format";
-        if (!formData.message.trim()) newErrors.message = "Message cannot be empty";
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    };
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const sendEmail = (e) => {
-        e.preventDefault();
-        if (!validateForm()) return;
-
-        emailjs
-            .sendForm("service_ih1gx1b", "template_vdiwx2j", form.current, {
-                publicKey: "OxMjv23tj12pE_CVu",
-            })
-            .then(() => {
-                console.log("Message sent");
-                form.current.reset();
-                setFormData({ name: "", email: "", message: "" });
-                setErrors({});
-                setIsModalOpen(true);
-                setTimeout(() => setIsModalOpen(false), 3000);
-            })
-            .catch((error) => console.log("Message failed.", error.text));
-    };
+    emailjs
+      .sendForm("service_ih1gx1b", "template_vdiwx2j", form.current, {
+        publicKey: "OxMjv23tj12pE_CVu",
+      })
+      .then(() => {
+        console.log("Message sent");
+        form.current.reset(); // Limpiar el formulario
+        setIsModalOpen(true); // Mostrar el modal
+        setTimeout(() => setIsModalOpen(false), 3000); // Ocultar después de 3 segundos
+      })
+      .catch((error) => {
+        console.log("Message failed.", error.text);
+      });
+  };
 
     return (
         <section className="contact-us" id="contact">
             <div className="form-container">
-                <form className="contact-form">
+                <form ref={form} onSubmit={sendEmail} className="contact-form">
                     <div className="inputGroup">
-                        <input autoComplete="off" required type="text" id="name" />
+                        <input autoComplete="off" required type="text" id="name" name="user_name"/>
                         <label htmlFor="name">Name</label>
                     </div>
                     <div className="inputGroup">
-                        <input autoComplete="off" required type="email" id="email" />
+                        <input autoComplete="off" required type="email" id="email" name="user_email"/>
                         <label htmlFor="email">Email</label>
                     </div>
                     <div className="inputGroup">
                         <textarea autoComplete="off" required id="message" rows="4"></textarea>
                         <label htmlFor="message">Message</label>
                     </div>
-                    <button type="submit" className="submit-btn">Send</button>
+                    <button type="submit" className="submit-btn" value="Send">Send</button>
                 </form>
             </div>
             <div className="contact_text">

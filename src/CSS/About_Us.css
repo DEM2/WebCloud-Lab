@@ -68,6 +68,9 @@
 }
 
 @media (max-width: 768px) {
+  .about-us{
+    width: 431.4px;
+  }
   .team-header {
     width: 650px;
   }
@@ -83,7 +86,6 @@
 }
 
 @media (max-width: 480px) {
-  
   .team-header {
     width: 345px;
   }

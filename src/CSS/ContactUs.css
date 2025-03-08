@@ -197,6 +197,7 @@
 @media (max-width: 768px) {
   .contact-us {
     flex-direction: column;
+    width: 390px;
   }
 
   .contact_text {

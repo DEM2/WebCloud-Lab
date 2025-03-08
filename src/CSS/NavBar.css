@@ -117,11 +117,11 @@
 /* Estilos para pantallas pequeñas */
 @media screen and (max-width: 768px) {
   .navbar {
-    width: 100vw; /* Asegura que ocupe todo el ancho */
+    width: 110vw; /* Asegura que ocupe todo el ancho */
     max-width: 100%;
     box-sizing: border-box; /* Evita desbordamientos por padding */
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten si no caben */
+    flex-wrap: wrap;
   }
 
   .menu-button {
@@ -148,9 +148,9 @@
     position: fixed;
     top: 0; /* Asegura que se quede en la parte superior */
     left: 0; /* Asegura que se quede alineado al borde izquierdo */
-    width: 100vw; /* Asegura que ocupe toda la pantalla */
-    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
-    background: rgba(0, 0, 0, 0.9);
+    width: 105vw; /* Asegura que ocupe toda la pantalla */
+    height: 236vw; /* Asegura que ocupe toda la altura de la pantalla */
+    background: rgba(0, 0, 0, 0.984);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -218,7 +218,7 @@
   .close-button {
     position: absolute;
     top: 22px;
-    right: 38px;
+    right: 39px;
     font-size: 1.9rem; /* Asegura que la "X" sea lo suficientemente grande */
     color: white;
     background: none;

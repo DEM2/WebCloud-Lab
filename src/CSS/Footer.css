@@ -41,6 +41,9 @@
 }
 
 @media (max-width: 768px) {
+  .footer{
+    width: 430px;
+  }
   .footer-text {
     font-size: 0.9rem;
   }

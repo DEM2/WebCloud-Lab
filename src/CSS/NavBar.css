@@ -105,7 +105,6 @@
   cursor: pointer;
 }
 
-
 .menu-button:focus {
   outline: none;
   box-shadow: none;
@@ -126,10 +125,13 @@
   }
 
   .menu-button {
-      display: block;
-      color:aliceblue;
-      padding-right: 20px;
-      padding-left: 20px;
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: aliceblue;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   .logo {
@@ -144,51 +146,101 @@
   /* Ocultar el menú normal en móviles */
   .nav-links {
     position: fixed;
-    top: 0;
-    right: -100%; /* Mantengo tu lógica para ocultarlo */
-    width: 75%; /* Ahora ocupa toda la pantalla */
-    height: 100vh; /* Altura completa */
+    top: 0; /* Asegura que se quede en la parte superior */
+    left: 0; /* Asegura que se quede alineado al borde izquierdo */
+    width: 100vw; /* Asegura que ocupe toda la pantalla */
+    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
     background: rgba(0, 0, 0, 0.9);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; /* Centra verticalmente los elementos */
-    transition: right 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateX(100%);
     z-index: 1001;
+    padding: 0; /* Asegura que no haya relleno no deseado */
+    margin: 0; /* Elimina cualquier margen que pueda haber */
   }
-  
+
   /* Mostrar el menú cuando está abierto */
   .nav-links.open {
-    right: 0;
+    transform: translateX(0); /* Menú aparece desde la parte superior */
+    opacity: 1; /* Aseguramos que se vea */t;
   }
-  
+
   /* Centrar bien los elementos */
   .nav-links li {
     margin: 20px 0; /* Espaciado uniforme */
     text-align: center;
     width: 100%; /* Para que los elementos se alineen mejor */
   }
-  
+
   .nav-links li a {
     font-size: 2rem;
     color: white;
     display: block; /* Para ocupar el espacio y mejorar el centrado */
     text-align: center;
+    text-decoration: none;
   }
 
   .nav-links li a:hover {
-      color: #8c5cc1;
+    color: #8c5cc1;
+  }
+
+  .overlay {
+    display: none;
+  }
+  
+  .overlay.open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out; /* Transición para el fondo oscuro */
+    opacity: 0; 
   }
 
   .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  /* Estilos para el botón de cerrar "X" */
+  .close-button {
+    position: absolute;
+    top: 22px;
+    right: 38px;
+    font-size: 1.9rem; /* Asegura que la "X" sea lo suficientemente grande */
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002; /* Asegura que el botón esté por encima del menú */
+  }
+
+  .close-button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .nav-links li a:focus {
+    outline: none; /* Elimina el contorno (outline) que aparece al hacer clic */
+    box-shadow: none; /* Elimina cualquier sombra que pueda aparecer al hacer clic */
+  }
+  
+  /* También puedes hacerlo con el estilo de los botones si es necesario */
+  .menu-button:focus {
+    outline: none; /* Elimina el contorno (outline) del botón de menú */
+    box-shadow: none; /* Elimina cualquier sombra que pueda aparecer al hacer clic */
   }
 }
-
   

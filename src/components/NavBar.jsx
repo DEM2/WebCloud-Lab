@@ -45,7 +45,10 @@ function Navbar() {
         ☰
       </button>
 
+      <div className={`overlay ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(false)}></div>
+
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+      <button className="close-button" onClick={() => setMenuOpen(false)}>X</button>
         <li><a href="#home" onClick={(e) => scrollToSection(e, "home")}>Home</a></li>
         <li><a href="#about" onClick={(e) => scrollToSection(e, "about")}>About Us</a></li>
         <li><a href="#services" onClick={(e) => scrollToSection(e, "services")}>Services</a></li>

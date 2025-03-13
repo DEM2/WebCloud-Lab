@@ -98,8 +98,8 @@
     justify-content: space-evenly;
     position: absolute;
     background: rgba(19, 18, 18, 0.95);  
-    width: 350px;
-    height: 60vh;
+    width: 250px;
+    height: 38vh;
     right: -800px;
     top: 110%;
     z-index: 10;
@@ -107,9 +107,10 @@
   }
 
   .menu.active {
-    right: 0;
+    right: 10px;
     display: flex;
     transition: all 0.7s ease-in;
+    border-radius: 25px;
   }
 
   .menu.active a{

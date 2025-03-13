@@ -82,10 +82,7 @@
 }
 
 @media (max-width: 480px) {
-  .new-section{
-    width: 432px;
-  }
-
+  
   .container{
     width: 300px;
     padding-left: 40px;

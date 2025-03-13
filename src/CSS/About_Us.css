@@ -3,15 +3,15 @@
   text-align: center;
   background: rgba(0, 0, 0, 0.9);
   position: relative;
+  overflow-x: hidden; 
 }
 
 .team-header {
-  display: flex;
   flex-direction: column;
   z-index: 1;
-  padding-left: 140px;
   padding-bottom: 20px;
-  width: 680px;
+  width:80%;
+  margin: 2%;
   text-align: left;
 }
 
@@ -69,10 +69,11 @@
 
 @media (max-width: 768px) {
   .about-us{
-    width: 431.4px;
+    width: 100%;
   }
   .team-header {
-    width: 650px;
+    width: 100%;
+    max-width: 90%;
   }
 
   .team-description {

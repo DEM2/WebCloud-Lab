@@ -92,6 +92,7 @@
   margin-bottom: 0;
   text-transform: uppercase;
   text-align: center;
+  padding: 0 10%;
 }
 
 .color1 {
@@ -114,30 +115,27 @@
   font-size: 1.3rem;
   color: darkgrey;
   text-align: center;
-  max-width: 600px;
+  max-width: 70%;
 }
 
 
 @media screen and (max-width: 768px) {
   .homepage {
     height: auto;
-    padding: 50px 20px;
     padding-top: 100px;
     display: flex;
-    width: 95%;
     flex-direction: column;
     justify-content: center;
   }
 
   .principal-title {
-    font-size: 70px; 
-    padding-left: 155px;
-    padding-right: 155px;
+    font-size: 50px;
+    padding: 0 5%;
   }
 
   .principal-text {
     font-size: 1.5rem;
-    max-width: 90%;  
+    max-width: 70%;  
   }
 
   .button {

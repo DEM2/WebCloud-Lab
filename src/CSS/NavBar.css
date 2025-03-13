@@ -1,14 +1,12 @@
-.navbar {
+
+.navbar{
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   transition: all 0.3s ease-in-out;
   z-index: 1000;
+  padding : 1rem 0
 }
 
 .navbar:not(.scrolled) {
@@ -16,8 +14,9 @@
 }
 
 .navbar.scrolled {
-  background: rgba(71, 70, 70, 0.8);  
+  background: rgba(19, 18, 18, 0.9);  
   backdrop-filter: blur(10px);
+  align-items: center;
 }
 
 .navbar.hidden {
@@ -28,22 +27,22 @@
   transform: translateY(0);
 }
 
-.logo-text {
-  font-size: 18px;
-  color: white;
-  margin-left: 10px;
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.navbar.scrolled .logo-text {
-  color: white;
-}
-
-
-/* ---------- Logo ---------- */
-.logo {
+.nav-links .logo{
   display: flex;
   align-items: center;
   color: whitesmoke;
+}
+
+.logo-text {
+  font-size: 1.1rem;
+  color: whitesmoke ;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .logo img {
@@ -51,37 +50,26 @@
   transition: height 0.5s ease, transform 0.5s ease;
 }
 
-.navbar.scrolled .logo img {
-  height: 50px;
-  transform: translateY(-5px);
-}
-
-.logo-text {
-  padding-right: 10px;
-  font-size: 1.1rem;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.hidden {
-  opacity: 0;
-  transform: translateX(-10px);
-  pointer-events: none;
-}
-
-/* ---------- Menú en Escritorio ---------- */
-.nav-links {
+.nav-links li {
   list-style: none;
-  display: flex;
-  gap: 20px;
-  padding-right: 50px;
-  padding-left: 50px;
+  margin: 0 0.5rem;
 }
 
-.nav-links li a {
+.nav-links ul {
+  display: flex; 
+  align-items: center;
+  gap: 0.4rem; 
+  padding: 0;
+  margin: 0;
+}
+
+
+.nav-links ul li a {
   text-decoration: none;
   color: whitesmoke;
   font-size: 1.1rem;
-  transition: color 0.3s ease-in-out;
+  display: block;
+  padding: 0.7rem 1rem;
 }
 
 .nav-links li a:hover {
@@ -92,155 +80,43 @@
   color: #8c5cc1;
 }
 
-.navbar.scrolled .nav-links li a {
-  color: whitesmoke;
-}
-
-/* ---------- Menú Hamburguesa (Móviles) ---------- */
-.menu-button {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 2rem;
+.BarIcon{
+  font-size: 1.5rem;
   cursor: pointer;
+  display: none;
 }
 
-.menu-button:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.menu-button:focus-visible {
-  outline: none;
-}
-
-/* Estilos para pantallas pequeñas */
-@media screen and (max-width: 768px) {
-  .navbar {
-    width: 110vw; /* Asegura que ocupe todo el ancho */
-    max-width: 100%;
-    box-sizing: border-box; /* Evita desbordamientos por padding */
+@media screen and (max-width: 768px){
+  .BarIcon{
     display: flex;
-    flex-wrap: wrap;
-  }
-
-  .menu-button {
-    display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: aliceblue;
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-
-  .logo {
-    padding-left: 15px;
     padding-right: 15px;
+    transition: color 0.3s ease;
   }
 
-  .logo img {
-    height: 40px; /* Reduce en pantallas más pequeñas */
-  }
-
-  /* Ocultar el menú normal en móviles */
-  .nav-links {
-    position: fixed;
-    top: 0; /* Asegura que se quede en la parte superior */
-    left: 0; /* Asegura que se quede alineado al borde izquierdo */
-    width: 105vw; /* Asegura que ocupe toda la pantalla */
-    height: 236vw; /* Asegura que ocupe toda la altura de la pantalla */
-    background: rgba(0, 0, 0, 0.984);
-    display: flex;
+  .nav-links ul{
     flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Centra verticalmente los elementos */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    transform: translateX(100%);
-    z-index: 1001;
-    padding: 0; /* Asegura que no haya relleno no deseado */
-    margin: 0; /* Elimina cualquier margen que pueda haber */
-  }
-
-  /* Mostrar el menú cuando está abierto */
-  .nav-links.open {
-    transform: translateX(0); /* Menú aparece desde la parte superior */
-    opacity: 1; /* Aseguramos que se vea */t;
-  }
-
-  /* Centrar bien los elementos */
-  .nav-links li {
-    margin: 20px 0; /* Espaciado uniforme */
-    text-align: center;
-    width: 100%; /* Para que los elementos se alineen mejor */
-  }
-
-  .nav-links li a {
-    font-size: 2rem;
-    color: white;
-    display: block; /* Para ocupar el espacio y mejorar el centrado */
-    text-align: center;
-    text-decoration: none;
-  }
-
-  .nav-links li a:hover {
-    color: #8c5cc1;
-  }
-
-  .overlay {
-    display: none;
-  }
-  
-  .overlay.open {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    transition: opacity 0.3s ease-in-out; /* Transición para el fondo oscuro */
-    opacity: 0; 
-  }
-
-  .menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
-
-  /* Estilos para el botón de cerrar "X" */
-  .close-button {
+    justify-content: space-evenly;
     position: absolute;
-    top: 22px;
-    right: 39px;
-    font-size: 1.9rem; /* Asegura que la "X" sea lo suficientemente grande */
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1002; /* Asegura que el botón esté por encima del menú */
+    background: rgba(19, 18, 18, 0.95);  
+    width: 350px;
+    height: 60vh;
+    right: -800px;
+    top: 110%;
+    z-index: 10;
+    transition: all 0.7s;
   }
 
-  .close-button:focus {
-    outline: none;
-    box-shadow: none;
+  .menu.active {
+    right: 0;
+    display: flex;
+    transition: all 0.7s ease-in;
   }
 
-  .nav-links li a:focus {
-    outline: none; /* Elimina el contorno (outline) que aparece al hacer clic */
-    box-shadow: none; /* Elimina cualquier sombra que pueda aparecer al hacer clic */
+  .menu.active a{
+    font-size: 1.5rem;
   }
-  
-  /* También puedes hacerlo con el estilo de los botones si es necesario */
-  .menu-button:focus {
-    outline: none; /* Elimina el contorno (outline) del botón de menú */
-    box-shadow: none; /* Elimina cualquier sombra que pueda aparecer al hacer clic */
+
+  .BarIcon.active-icon {
+    color: #8c5cc1; 
   }
 }
-  

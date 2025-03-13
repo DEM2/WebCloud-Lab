@@ -1,61 +1,67 @@
-import React, { useState, useEffect } from "react";
-import "../CSS/NavBar.css"; 
+import { useState, useEffect } from "react";
+import "../CSS/NavBar.css";
+import { FaBars } from "react-icons/fa";
 
 function Navbar() {
   const [scrolling, setScrolling] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [prevScrollY, setPrevScrollY] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+  };
 
   useEffect(() => {
+    let prevScrollY = window.scrollY;
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      if (currentScrollY > prevScrollY) {
-        setVisible(false); 
-      } else {
-        setVisible(true); 
-      }
-
+      setVisible(currentScrollY < prevScrollY);
       setScrolling(currentScrollY > 50);
-      setPrevScrollY(currentScrollY);
+      prevScrollY = currentScrollY;
+
+      if (isOpen) setIsOpen(false);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollY]);
-
-  const scrollToSection = (event, sectionId) => {
-    event.preventDefault(); 
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setMenuOpen(false); 
-    }
-  };
+  }, [isOpen]);
 
   return (
-    <nav className={`navbar ${scrolling ? "scrolled" : ""} ${visible ? "" : "hidden"}`}>
-      <div className="logo">
-        <img src= "src/assets/Images/logo_webcloud.png" alt="Logo" />
-        <span className={`logo-text ${scrolling ? "hidden" : ""}`}>WebCloud Labs</span>
-      </div>
+    <header className={`navbar ${scrolling ? "scrolled" : ""} ${visible ? "" : "hidden"}`}>
 
-      <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
-      </button>
-
-      <div className={`overlay ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(false)}></div>
-
-      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-      <button className="close-button" onClick={() => setMenuOpen(false)}>X</button>
-        <li><a href="#home" onClick={(e) => scrollToSection(e, "home")}>Home</a></li>
-        <li><a href="#about" onClick={(e) => scrollToSection(e, "about")}>About Us</a></li>
-        <li><a href="#services" onClick={(e) => scrollToSection(e, "services")}>Services</a></li>
-        <li><a href="#contact" onClick={(e) => scrollToSection(e, "contact")}>Contact</a></li>
-      </ul>
-    </nav>
+      <nav className="nav-links">
+        <div className="logo">
+          <img src="src/assets/Images/logo_webcloud.png" alt="Logo" />
+          <span className="logo-text">WebCloud Labs</span>
+        </div>
+        <ul className={isOpen ? "menu active" : "menu"}>
+          <li><a  onClick={() => {
+            document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+            toggleMenu();
+          }}>Home</a></li>
+          <li><a  onClick={() => {
+            document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+            toggleMenu();
+          }}>About Us</a></li>
+          <li><a  onClick={() => {
+            document.getElementById("services").scrollIntoView({ behavior: "smooth" });
+            toggleMenu();
+          }}>Services</a></li>
+          <li><a onClick={() => {
+            document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+            toggleMenu();
+          }}>Contact</a></li>
+        </ul>
+        <div className={`BarIcon ${isOpen ? "active-icon" : ""}`} onClick={toggleMenu}>
+          <FaBars />
+        </div>
+      </nav>
+    </header>
   );
 }
 
 export default Navbar;
+
+
+

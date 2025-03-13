@@ -33,6 +33,11 @@
   justify-content: space-between;
 }
 
+.nav-links:hover {
+  box-shadow: #8c5cc1;
+  cursor: pointer;
+}
+
 .nav-links .logo{
   display: flex;
   align-items: center;

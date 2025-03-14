@@ -5,16 +5,15 @@ import Card from "../components/Card";
 const services = [
   {
     Title:"Custom mobile apps for your business. ",
-    Image:"src/assets/Icons/code.png"
-    
+    Image: `${import.meta.env.BASE_URL}/assets/Icons/code.png`
   },
   {
     Title:"We transform data into effective strategies.",
-    Image:"src/assets/Icons/analysis.png"
+    Image: `${import.meta.env.BASE_URL}/assets/Icons/analysis.png`
   },
   {
     Title:"Optimized web platforms for any need.",
-    Image:"src/assets/Icons/web.png" 
+    Image: `${import.meta.env.BASE_URL}assets/Icons/web.png`
   }
 ]
 

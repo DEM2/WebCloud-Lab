@@ -32,7 +32,7 @@ function Navbar() {
 
       <nav className="nav-links">
         <div className="logo">
-          <img src="src/assets/Images/logo_webcloud.png" alt="Logo" />
+          <img src={`${import.meta.env.BASE_URL}/assets/Images/logo_webcloud.png`} alt="Logo" />
           <span className="logo-text">WebCloud Labs</span>
         </div>
         <ul className={isOpen ? "menu active" : "menu"}>

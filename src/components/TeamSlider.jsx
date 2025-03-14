@@ -8,23 +8,25 @@ import 'swiper/css/pagination';
 
 const teamMembers = [
   {
-    image: "src/assets/Images/juanCampanella.jpg",
+    image: `${import.meta.env.BASE_URL}/assets/Images/juanCampanella.jpg`,
     name: "Juan Jose Campanella",
     profession: "BSc. Systems Engineering",
-    description: "Apasionado por la tecnología y la experiencia de usuario."
+    description: "Systems Engineer specialized in Frontend Web Application Development with emphasis on Data Analysis.",
+    link: "https://www.linkedin.com/in/juan-jos%C3%A9-campanella-de-oro-8a694220b/"
   },
   {
-    image: "src/assets/Images/danielMendoza.jpeg",
+    image: `${import.meta.env.BASE_URL}/assets/Images/danielMendoza.jpeg`,
     name: "Daniel Mendoza",
     profession: "BSc. Systems Engineering",
     description: "Systems Engineer specialized in software development and project management, creating efficient and innovative solutions.",
     link: "https://www.linkedin.com/in/daniel-enrique-mendoza-contreras-138a31263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
-    image: "src/assets/Images/vanessaFontalvo.jpg",
+    image: `${import.meta.env.BASE_URL}/assets/Images/vanessaFontalvo.jpg`,
     name: "Vanessa Fontalvo",
     profession: "BSc. Systems Engineering",
-    description: "Lidera proyectos de manera eficiente con visión estratégica."
+    description: "Systems Engineer with emphasis on Agile Methodologies and Software Development.",
+    link: "https://www.linkedin.com/in/vanessa-fontalvo-reniz-50a7561b9/"
   }
 ];
 
